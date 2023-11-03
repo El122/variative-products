@@ -28,6 +28,10 @@ class RouteServiceProvider extends ServiceProvider {
                 ->prefix('admin')
                 ->as('admin.')
                 ->group(base_path('routes/admin/category.php'));
+            Route::middleware('web')
+                ->prefix('admin')
+                ->as('admin.')
+                ->group(base_path('routes/admin/filters.php'));
         });
     }
 }

@@ -17,7 +17,7 @@ class GetCategoriesControllerTest extends TestCase {
         parent::setUp();
 
         $this->admin = User::factory()->create();
-        $this->category = Category::create(['name' => fake()->word()]);
+        $this->category = Category::factory()->create();
     }
 
     public function test_get_all(): void {

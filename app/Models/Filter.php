@@ -10,7 +10,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Filter extends Model {
     use HasFactory;
 
-    protected $fillable = ['name', 'type', 'category_id'];
+    protected $fillable = [
+        'name',
+        'type',
+        'category_id',
+    ];
     public $timestamps = false;
 
     // Relations

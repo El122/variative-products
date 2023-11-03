@@ -1,31 +1,31 @@
 <?php
 
-namespace Tests\Feature\Controllers\Admin\Category;
+namespace Tests\Feature\Controllers\Admin\Filter;
 
-use App\Models\Category;
+use App\Models\Filter;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class DeleteCategoryControllerTest extends TestCase {
+class DeleteFilterControllerTest extends TestCase {
     use RefreshDatabase;
 
     private User $admin;
-    private Category $category;
+    private Filter $filter;
 
     public function setUp(): void {
         parent::setUp();
 
         $this->admin = User::factory()->create();
-        $this->category = Category::factory()->create();
+        $this->filter = Filter::factory()->create();
     }
 
     public function test_delete_success(): void {
         $this->actingAs($this->admin)
-            ->post(route('admin.category.delete', [
-                'category' => $this->category,
+            ->post(route('admin.filter.delete', [
+                'filter' => $this->filter,
             ]))->assertRedirect();
 
-        $this->assertModelMissing($this->category);
+        $this->assertModelMissing($this->filter);
     }
 }

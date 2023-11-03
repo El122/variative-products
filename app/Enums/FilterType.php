@@ -3,7 +3,15 @@
 namespace App\Enums;
 
 enum FilterType: string {
-    public const CHECKBOX = 1;
-    public const RADIO = 2;
-    public const SLIDER = 3;
+    case CHECKBOX = '1';
+    case RADIO = '2';
+    case SLIDER = '3';
+
+    public function label(): string {
+        return match ($this) {
+            FilterType::CHECKBOX => 'Чекбокс',
+            FilterType::RADIO => 'Радиокнопка',
+            FilterType::SLIDER => 'Слайдер'
+        };
+    }
 }
