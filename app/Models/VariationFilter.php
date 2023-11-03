@@ -9,7 +9,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class VariationFilter extends Model {
     use HasFactory;
 
-    protected $fillable = ['value', 'variation_id', 'filter_id'];
+    protected $fillable = [
+        'value',
+        'variation_id',
+        'filter_id',
+    ];
     public $timestamps = false;
 
     // Relations

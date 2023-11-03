@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Product;
+namespace App\Http\Controllers\Admin\Product\Product;
 
 use App\Actions\Product\DeleteProductAction;
 use App\Http\Controllers\Controller;

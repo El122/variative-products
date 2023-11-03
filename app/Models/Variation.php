@@ -10,7 +10,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Variation extends Model {
     use HasFactory;
 
-    protected $fillable = ['price', 'description', 'product_id'];
+    protected $fillable = [
+        'price',
+        'description',
+        'product_id',
+    ];
 
     // Relations
 
