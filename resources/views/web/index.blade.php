@@ -6,8 +6,15 @@
                 <label>
                     {{$filter->name}}
                     @if($filter->type == \App\Enums\FilterType::CHECKBOX->value)
+                        @foreach($filter->variations?->unique('value') as $value)
+                            <input type="checkbox" value="{{$value}}">
+                        @endforeach
                     @elseif($filter->type == \App\Enums\FilterType::RADIO->value)
+                        @foreach($filter->variations?->unique('value') as $value)
+                            <input type="radio" value="{{$value}}">
+                        @endforeach
                     @elseif($filter->type == \App\Enums\FilterType::SLIDER->value)
+                            <input type="range">
                     @endif
                 </label>
             @endforeach
